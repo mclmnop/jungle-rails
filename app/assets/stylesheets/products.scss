@@ -40,6 +40,23 @@ main section.categories-show {
         transition: all 0.3s;
       }
 
+      aside.badge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 6em;
+        height: 2.4em;
+        padding: 18px 1px 1px 1px;
+        line-height: 0;
+        background-color: #dbaeae;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 20px;
+        font-size: 1.1em;
+        font-weight: initial;
+      }
+
       aside.price {
         position: absolute;
         top: 0;
