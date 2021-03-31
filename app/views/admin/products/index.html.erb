@@ -4,6 +4,11 @@
     <h1>Admin &raquo; All Products</h1>
   </header>
 
+  <%puts "hello"%>
+  <%puts @username%>
+  <%puts @userpassword%>
+
+
   <div class="well">
     <%= link_to '+ New Product', [:new, :admin, :product], class: 'btn btn-info' %>
   </div>
@@ -13,6 +18,7 @@
     <table class="table table-bordered">
       <thead>
         <tr>
+
           <th colspan="2">Product</th>
           <th>Category</th>
           <th>Price</th>
