@@ -1,4 +1,6 @@
 class Admin::CategoriesController < ApplicationController
+  http_basic_authenticate_with name: Rails.configuration.admin[:username], password:  Rails.configuration.admin[:userpassword]
+
   def index
     @categories = Category.order(:id).all
   end
