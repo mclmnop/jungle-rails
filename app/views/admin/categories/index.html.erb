@@ -1,7 +1,7 @@
 <section class="admin-categories-index">
 
   <header class="page-header">
-    <h1>Admin &raquo; All Catagories</h1>
+    <h1>Admin &raquo; All Categories</h1>
   </header>
 
   <div class="well">
@@ -14,16 +14,12 @@
       <thead>
         <tr>
 
-          <th colspan="2">Category</th>
-          <th>Category</th>
-          <th>Price</th>
-          <th>Qty Remaining</th>
-          <th></th>
+          <th >id</th>
+          <th >Category</th>
+          <th>Creation Date</th>
         </tr>
       </thead>
       <tbody>
-        <% puts @categories.inspect %>
-        <% puts  "AAAAAAAAAAALLLLLLOOOO"%>
         <%= render @categories %>
       </tbody>
     </table>
