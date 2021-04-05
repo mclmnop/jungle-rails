@@ -10,9 +10,12 @@ class UsersController < ApplicationController
     puts @users
     puts "user db fin"
 
-    if validate_params(user_params)
-      user = User.new(user_params)
-    end
+
+    user = User.new(user_params)
+
+    # if validate_params(user_params)
+    #   user = User.new(user_params)
+    # end
     
     # puts "NWE USER"
     # puts user_params[:password_confirmation]
@@ -26,9 +29,9 @@ class UsersController < ApplicationController
   
   private
 
-  def validate_params(user_params)
-    user_params[:password] == user_params[:password_confirmation]
-  end
+  # def validate_params(user_params)
+  #   user_params[:password] == user_params[:password_confirmation]
+  # end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
