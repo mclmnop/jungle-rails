@@ -9,8 +9,14 @@ class UsersController < ApplicationController
     #@users = Users.all.orders
     puts @users
     puts "user db fin"
-    user = User.new(user_params)
-    if user.save
+
+    if validate_params(user_params)
+      user = User.new(user_params)
+    end
+    
+    # puts "NWE USER"
+    # puts user_params[:password_confirmation]
+    if user && user.save
       session[:user_id] = user.id
       redirect_to '/'
     else
@@ -19,6 +25,10 @@ class UsersController < ApplicationController
   end
   
   private
+
+  def validate_params(user_params)
+    user_params[:password] == user_params[:password_confirmation]
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
