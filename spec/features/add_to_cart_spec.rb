@@ -18,7 +18,7 @@ RSpec.feature "Visitor can add to cart", type: :feature, js: true do
     end
   end
 
-  scenario "They see all products" do
+  scenario "Cart appears when item is added" do
     visit root_path
     save_screenshot 'cart_test1_products_page.png'
     click_on('Add', match: :first)
