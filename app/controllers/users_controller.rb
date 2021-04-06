@@ -27,6 +27,8 @@ class UsersController < ApplicationController
     end
   end
   
+
+
   private
 
   # def validate_params(user_params)

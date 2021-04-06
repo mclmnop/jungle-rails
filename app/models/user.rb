@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  #normalize_attribute  :email, :with => :strip
   validates :password, confirmation: true
   validates :password_confirmation, presence: true
   validates :password, length: { minimum: 5 }
@@ -10,4 +11,23 @@ class User < ActiveRecord::Base
   puts "DEDNAS CLASSE"
   puts self.inspect
 
+
+  # def authenticate_with_credentials(email, password)
+  #   user = User.find_by_email(email)
+  #   if user && user.authenticate(password)
+  #     session[:user_id] = user.id
+  #   else
+  #     return false
+  #   end
+  # end
+   def self.authenticate_with_credentials(email, password)
+    user = self.find_by_email(email)
+    if user && user.authenticate(password)
+      puts "ca <AAAARCHE?"
+      puts user
+      return user
+    else
+      return false
+    end
+  end
 end
