@@ -34,13 +34,13 @@ RSpec.describe User, type: :model do
     it 'should authenticate user even if email case changes' do
       @user = User.new(first_name:"Grego", last_name: "Hill", email: "grego@yo.com", password:"pwd55", password_confirmation:"pwd55")
       @user.save
-      auth = User.authenticate_with_credentials("greGO@yo.com".downcase, "pwd55")
+      auth = User.authenticate_with_credentials("greGO@yo.com", "pwd55")
       expect(auth).to have_attributes(:first_name => "Grego", :last_name => "Hill")
     end
     it 'should authenticate user even if email contains spaces' do
       @user = User.new(first_name:"Grego", last_name: "Hill", email: "grego@yo.com", password:"pwd55", password_confirmation:"pwd55")
       @user.save
-      auth = User.authenticate_with_credentials(" grego@yo.com".strip, "pwd55")
+      auth = User.authenticate_with_credentials(" grego@yo.com", "pwd55")
       expect(auth).to have_attributes(:first_name => "Grego", :last_name => "Hill")
     end
 

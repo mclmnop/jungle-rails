@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   def create
     #if user = authenticate_with_credentials(params[:email], params[:password])
-    if user = User.authenticate_with_credentials(params[:email].downcase.strip, params[:password])
+    if user = User.authenticate_with_credentials(params[:email], params[:password])
       puts "DANS SESSION"
       puts user[:id]
       session[:user_id] = user[:id]
