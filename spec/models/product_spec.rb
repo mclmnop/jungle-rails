@@ -6,8 +6,6 @@ RSpec.describe Product, type: :model do
       @category = Category.new(name: "Cossins")
       @product = Product.new(name: "Peluche", price_cents: 9999, quantity: 99, :category => @category)
       @product.valid?
-      puts"yo price"
-      puts @product.errors.inspect
       saves_fine = @product.save
       expect(saves_fine).to be true
     end
@@ -21,8 +19,6 @@ RSpec.describe Product, type: :model do
         @category = Category.new(name: "Cossins")
         @product = Product.new(name: "doll", price_cents: nil, quantity: 4, category_id:4)
         @product.valid?
-        # puts"yo price"
-        # puts @product.errors.inspect
         expect(@product.errors[:price]).to include("is not a number")
     end
     it "should have a quantity" do
