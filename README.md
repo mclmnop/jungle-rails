@@ -2,6 +2,8 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+!["Home page"](https://github.com/mclmnop/jungle-rails/blob/master/docs/home_page.png?raw=true)
+!["Cart View"](https://github.com/mclmnop/jungle-rails/blob/master/docs/cart_page.png?raw=true)
 
 ## Setup
 
