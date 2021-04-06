@@ -1,8 +1,6 @@
 # encoding: utf-8
 require 'rails_helper'
 
-
-
 RSpec.feature "Visitor can add to cart", type: :feature, js: true do
 
   #SETUP
@@ -26,11 +24,6 @@ RSpec.feature "Visitor can add to cart", type: :feature, js: true do
     click_on('Add', match: :first)
     visit cart_path
     expect(page).to have_css '.items'
-    #puts page.html
-    #expect(page).to have_text(/Home/u)
-    #page.has_content?(/My Cart/i)
-    #expect(page).to have_content('Home')
-    #expect(assert_text('Home')).to be true
     save_screenshot 'cart_test2_item_added.png'
   end
 end
