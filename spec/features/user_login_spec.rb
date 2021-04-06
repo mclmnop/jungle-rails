@@ -17,12 +17,5 @@ RSpec.feature "Visitor can add to cart", type: :feature, js: true do
     visit root_path
     save_screenshot 'user_login_test2.png'
     expect(page).to have_css '.signed_in'
- 
-    # visit root_path
-    # save_screenshot 'cart_test1_products_page.png'
-    # click_on('Add', match: :first)
-    # visit cart_path
-    # expect(page).to have_css '.items'
-    # save_screenshot 'cart_test2_item_added.png'
   end
 end
