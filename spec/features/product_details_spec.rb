@@ -1,6 +1,8 @@
 require 'rails_helper'
+require 'support/database_cleaner'
 
-RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
+
+RSpec.feature "Visitor navigates to the product details page", type: :feature, js: true do
 
   #SETUP
   before :each do
@@ -17,9 +19,10 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
     end
   end
 
-  scenario "They see all products" do
+  scenario "They can click on one product" do
     visit root_path
-    save_screenshot 'get_home_page.png'
-    expect(page).to have_css 'article.product', count: 10
+    click_on('Details »', match: :first)
+    expect(page).to have_css '.products-show'
+    save_screenshot 'product_details_showpage.png'
   end
 end
