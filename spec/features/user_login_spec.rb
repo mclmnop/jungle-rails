@@ -8,7 +8,6 @@ RSpec.feature "Visitor can add to cart", type: :feature, js: true do
   end
 
   scenario "User can login succesfully" do
-    puts @user
     visit login_path
     save_screenshot 'user_login_test1.png'
     fill_in 'email', with: @user.email
